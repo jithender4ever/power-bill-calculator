@@ -19,6 +19,19 @@ export function FormInput2BR({ unitType = '' }) {
         return bill + myContext.commonBillAmount;
     };
 
+    function handleInputChange(e) {
+        setBill(Number(e.target.value));
+    }
+
+    function handleOnBlur(e) {
+        if (e.target.value === '') setBill(0);
+    }
+
+    function handleOnFocus(e) {
+        const value = Number(e.target.value);
+        if (value === 0) setBill('');
+    }
+
     return (
         <div className="ui form">
             <div className="inline field">
@@ -30,7 +43,10 @@ export function FormInput2BR({ unitType = '' }) {
                         min={0}
                         step={0.01}
                         value={bill}
-                        onChange={(e) => setBill(Number(e.target.value))} />
+                        onChange={handleInputChange}
+                        onBlur={handleOnBlur}
+                        onFocus={handleOnFocus}
+                    />
                     <div className="ui basic label">.00</div>
                 </div>
             </div>

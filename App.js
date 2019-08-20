@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {CommonMeter} from "./components/CommonMeter";
 import {TwoBRMeter} from "./components/TwoBRMeter";
@@ -24,7 +24,7 @@ function App() {
               <CommonMeter />
               <TwoBRMeter />
               <TwoBRMeter tenant />
-        {/*<OneBRMeter />*/}
+              <OneBRMeter />
           </BillAmountContext.Provider>
       </div>
     </div>
